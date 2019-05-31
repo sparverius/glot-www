@@ -40,6 +40,7 @@ data Language = Assembly |
                 Rust |
                 Scala |
                 Swift |
+                Temptory |
                 TypeScript |
                 Plaintext
                 deriving Eq
@@ -86,6 +87,7 @@ instance Show Language where
     show Rust = "rust"
     show Scala = "scala"
     show Swift = "swift"
+    show Temptory = "temptory"
     show TypeScript = "typescript"
     show Plaintext = "plaintext"
 
@@ -129,6 +131,7 @@ toLanguage "ruby" = Ruby
 toLanguage "rust" = Rust
 toLanguage "scala" = Scala
 toLanguage "swift" = Swift
+toLanguage "temptory" = Temptory
 toLanguage "typescript" = TypeScript
 toLanguage _ = Plaintext
 
@@ -171,6 +174,7 @@ allLanguages = [
         Rust,
         Scala,
         Swift,
+        Temptory,
         TypeScript
     ]
 
@@ -211,6 +215,7 @@ languageFileExt Ruby = "rb"
 languageFileExt Rust = "rs"
 languageFileExt Scala = "scala"
 languageFileExt Swift = "swift"
+languageFileExt Temptory = "dats"
 languageFileExt TypeScript = "ts"
 languageFileExt Plaintext = "txt"
 
@@ -257,6 +262,7 @@ languageLogo Ruby = img_ruby_svg
 languageLogo Rust = img_rust_svg
 languageLogo Scala = img_scala_svg
 languageLogo Swift = img_swift_svg
+languageLogo Temptory = img_temptory_svg
 languageLogo TypeScript = img_typescript_svg
 languageLogo Plaintext = img_plaintext_svg
 
@@ -297,6 +303,7 @@ languageLogoPng Ruby = img_ruby_svg_png
 languageLogoPng Rust = img_rust_svg_png
 languageLogoPng Scala = img_scala_svg_png
 languageLogoPng Swift = img_swift_svg_png
+languageLogoPng Temptory = img_temptory_svg_png
 languageLogoPng TypeScript = img_typescript_svg_png
 languageLogoPng Plaintext = img_plaintext_svg_png
 
@@ -337,6 +344,7 @@ languageAceMode Ruby = "ace/mode/ruby"
 languageAceMode Rust = "ace/mode/rust"
 languageAceMode Scala = "ace/mode/scala"
 languageAceMode Swift = "ace/mode/swift"
+languageAceMode Temptory = "ace/mode/temptory"
 languageAceMode TypeScript = "ace/mode/typescript"
 languageAceMode Plaintext = "ace/mode/plain_text"
 
@@ -378,6 +386,7 @@ languageName Rust = "Rust"
 languageName Scala = "Scala"
 languageName Swift = "Swift"
 languageName TypeScript = "TypeScript"
+languageName Temptory = "Temptory"
 languageName Plaintext = "Plaintext"
 
 -- If the language is runnable or not
@@ -422,6 +431,7 @@ languageRunCmdExample Ruby = "ruby main.rb"
 languageRunCmdExample Rust = "rustc -o a.out main.rs && ./a.out"
 languageRunCmdExample Scala = "scalac main.scala && scala Main"
 languageRunCmdExample Swift = "swift main.swift"
+languageRunCmdExample Temptory = "make"
 languageRunCmdExample TypeScript = "tsc main.ts && node main.js"
 languageRunCmdExample _ = ""
 
@@ -542,6 +552,7 @@ languageDefaultContent Scala = [multiline|object Main extends App {
     println("Hello World!")
 }|]
 languageDefaultContent Swift = [multiline|print("Hello World!")|]
+languageDefaultContent Temptory = [multiline|implement main0 () = print"Hello World!\n"|]
 languageDefaultContent TypeScript = [multiline|const hello : string = "Hello World!"
 console.log(hello)|]
 languageDefaultContent Plaintext = [multiline|Hello World!|]
